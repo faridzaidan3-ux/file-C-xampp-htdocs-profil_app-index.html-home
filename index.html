@@ -1,1261 +1,205 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farid Zaidaan | Portfolio</title>
 
-  <title>Muhammad Farid Zaidaan | Student Portfolio</title>
-
-  <meta name="description"
-    content="Portfolio pribadi Muhammad Farid Zaidaan, mahasiswa yang terus belajar, berkembang, dan membangun pengalaman.">
-
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    /* =========================
-       RESET DAN PENGATURAN DASAR
-    ========================= */
-
-    :root {
-      --background: #f8f8f8;
-      --surface: #ffffff;
-      --text: #171717;
-      --muted: #737373;
-      --border: #e5e5e5;
-      --black: #111111;
-      --radius: 18px;
-      --max-width: 1100px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    .container {
-      width: min(100% - 40px, var(--max-width));
-      margin-inline: auto;
-    }
-
-    .section {
-      padding: 90px 0;
-      scroll-margin-top: 80px;
-    }
-
-    .section-label {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      margin-bottom: 18px;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.2;
-      letter-spacing: -1.5px;
-    }
-
-    .section-description {
-      max-width: 620px;
-      color: var(--muted);
-    }
-
-    /* =========================
-       HEADER DAN NAVIGASI
-    ========================= */
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(248, 248, 248, 0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .navbar {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .logo {
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: -0.7px;
-    }
-
-    .logo span {
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-contact {
-      padding: 11px 17px;
-      color: #fff !important;
-      background: var(--black);
-      border-radius: 100px;
-    }
-
-    /* =========================
-       HERO / PROFIL UTAMA
-    ========================= */
-
-    .hero {
-      min-height: 570px;
-      display: flex;
-      align-items: center;
-      padding: 80px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      align-items: center;
-      gap: 70px;
-    }
-
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 25px;
-      padding: 8px 13px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: #22a06b;
-      border-radius: 50%;
-    }
-
-    .hero h1 {
-      margin-bottom: 20px;
-      font-size: clamp(42px, 6vw, 68px);
-      line-height: 1.08;
-      letter-spacing: -3px;
-    }
-
-    .hero h1 span {
-      color: var(--muted);
-    }
-
-    .hero-description {
-      max-width: 540px;
-      margin-bottom: 30px;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 20px;
-      border: 1px solid var(--black);
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-primary {
-      color: #fff;
-      background: var(--black);
-    }
-
-    .button-primary:hover {
-      background: #333;
-    }
-
-    .button-secondary {
-      background: transparent;
-    }
-
-    .button-secondary:hover {
-      background: #fff;
-    }
-
-    .hero-image-wrapper {
-      width: 100%;
-      max-width: 340px;
-      justify-self: end;
-      padding: 12px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 25px;
-      transform: rotate(2deg);
-    }
-
-    .hero-image {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 17px;
-      background: #e5e5e5;
-    }
-
-    .image-caption {
-      padding: 16px 5px 6px;
-    }
-
-    .image-caption strong {
-      display: block;
-      font-size: 14px;
-    }
-
-    .image-caption span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* =========================
-       TENTANG SAYA
-    ========================= */
-
-    .about {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 70px;
-    }
-
-    .about-content p {
-      margin-bottom: 16px;
-      color: var(--muted);
-    }
-
-    .about-facts {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .fact-card {
-      padding: 18px;
-      background: var(--background);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .fact-card span {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .fact-card strong {
-      font-size: 14px;
-      overflow-wrap: anywhere;
-    }
-
-    /* =========================
-       PENDIDIKAN
-    ========================= */
-
-    .education-list {
-      display: grid;
-      gap: 16px;
-      margin-top: 32px;
-    }
-
-    .education-card {
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      gap: 20px;
-      padding: 25px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: transform 0.2s;
-    }
-
-    .education-card:hover {
-      transform: translateY(-3px);
-    }
-
-    .education-icon {
-      width: 52px;
-      height: 52px;
-      display: grid;
-      place-items: center;
-      background: #f0f0f0;
-      border-radius: 14px;
-      font-size: 23px;
-    }
-
-    .education-card h3 {
-      margin-bottom: 5px;
-      font-size: 17px;
-    }
-
-    .education-card p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .education-period {
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    /* =========================
-       SKILL
-    ========================= */
-
-    .skills {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 32px;
-    }
-
-    .skill-card {
-      padding: 24px;
-      background: var(--background);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-
-    .skill-card h3 {
-      margin-bottom: 14px;
-      font-size: 16px;
-    }
-
-    .skill-card p {
-      margin-bottom: 16px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-tag {
-      padding: 6px 10px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      color: #444;
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    /* =========================
-       PROYEK / PORTFOLIO
-    ========================= */
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-      margin-top: 32px;
-    }
-
-    .project-card {
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
-    }
-
-    .project-cover {
-      min-height: 190px;
-      display: grid;
-      place-items: center;
-      padding: 30px;
-      background: #ededed;
-      color: #222;
-      font-size: 38px;
-      font-weight: 800;
-      letter-spacing: -2px;
-    }
-
-    .project-content {
-      padding: 25px;
-    }
-
-    .project-content h3 {
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    .project-content p {
-      margin-bottom: 17px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .project-link {
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    /* =========================
-       KONTAK
-    ========================= */
-
-    .contact {
-      background: var(--black);
-      color: #fff;
-    }
-
-    .contact .section-label,
-    .contact .section-description {
-      color: #b5b5b5;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: start;
-      gap: 60px;
-    }
-
-    .contact .section-title {
-      max-width: 500px;
-    }
-
-    .contact-info {
-      display: grid;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .contact-item {
-      padding: 17px 19px;
-      background: #1b1b1b;
-      border: 1px solid #343434;
-      border-radius: 12px;
-    }
-
-    .contact-item span {
-      display: block;
-      margin-bottom: 4px;
-      color: #aaa;
-      font-size: 11px;
-    }
-
-    .contact-item a {
-      font-size: 14px;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-note {
-      padding: 25px;
-      border: 1px solid #343434;
-      border-radius: var(--radius);
-    }
-
-    .contact-note h3 {
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
-
-    .contact-note p {
-      margin-bottom: 20px;
-      color: #b5b5b5;
-      font-size: 14px;
-    }
-
-    .contact-note .button {
-      color: #111;
-      background: #fff;
-      border-color: #fff;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    .footer {
-      padding: 26px 0;
-      background: #0b0b0b;
-      color: #aaa;
-      border-top: 1px solid #292929;
-    }
-
-    .footer-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer p {
-      font-size: 12px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-    }
-
-    .footer-links a {
-      font-size: 12px;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
-    /* =========================
-       RESPONSIVE TABLET
-    ========================= */
-
-    @media (max-width: 850px) {
-      .hero-grid {
-        gap: 35px;
-      }
-
-      .about-grid,
-      .contact-grid {
-        gap: 35px;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .nav-links {
-        gap: 17px;
-      }
-    }
-
-    /* =========================
-       RESPONSIVE HP
-    ========================= */
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(100% - 32px, var(--max-width));
-      }
-
-      .section {
-        padding: 65px 0;
-      }
-
-      .navbar {
-        min-height: 68px;
-        flex-wrap: wrap;
-        gap: 12px;
-        padding: 14px 0;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-        overflow-x: auto;
-        padding-bottom: 4px;
-      }
-
-      .nav-links a {
-        white-space: nowrap;
-        font-size: 11px;
-      }
-
-      .nav-contact {
-        padding: 7px 10px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 55px 0 65px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 38px;
-      }
-
-      .hero h1 {
-        font-size: clamp(40px, 12vw, 56px);
-        letter-spacing: -2px;
-      }
-
-      .hero-description {
-        font-size: 14px;
-      }
-
-      .hero-image-wrapper {
-        width: min(100%, 290px);
-        justify-self: center;
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .about-facts {
-        gap: 10px;
-      }
-
-      .fact-card {
-        padding: 14px;
-      }
-
-      .education-card {
-        grid-template-columns: 44px 1fr;
-        gap: 13px;
-        padding: 18px;
-      }
-
-      .education-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 19px;
-      }
-
-      .education-card h3 {
-        font-size: 15px;
-      }
-
-      .skills-grid,
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .skill-card,
-      .project-content {
-        padding: 20px;
-      }
-
-      .project-cover {
-        min-height: 150px;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-links {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-    }
-
-    /* Mengurangi animasi untuk pengguna yang memilih
-       preferensi gerakan minimal di perangkatnya. */
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
-
+  <!-- HEADER -->
   <header class="header">
-    <nav class="navbar container" aria-label="Navigasi utama">
+    <div class="container navbar">
+      <a href="#home" class="logo">Farid<span>.</span></a>
 
-      <a href="#home" class="logo">
-        FARID<span>.PORTFOLIO</span>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Tentang</a></li>
-        <li><a href="#education">Pendidikan</a></li>
-        <li><a href="#skills">Skill</a></li>
-        <li><a href="#projects">Proyek</a></li>
-        <li><a href="#contact" class="nav-contact">Kontak</a></li>
-      </ul>
-
-    </nav>
+      <nav class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#education">Pendidikan</a>
+        <a href="#skills">Skill</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </div>
   </header>
 
   <main>
 
-    <!-- =========================
-         HERO / PROFIL
-    ========================== -->
+    <!-- HERO / PROFIL -->
+    <section id="home" class="hero section">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">PORTFOLIO MAHASISWA</p>
 
-    <section class="hero container" id="home">
-
-      <div class="hero-grid">
-
-        <div class="hero-content">
-
-          <div class="availability">
-            <span class="status-dot"></span>
-            Mahasiswa · Terus Berkembang
-          </div>
-
-          <h1>
-            Halo, gue<br>
-            <span>Muhammad Farid Zaidaan.</span>
-          </h1>
+          <h1>Halo, gue <span>Farid Zaidaan</span></h1>
 
           <p class="hero-description">
-            Gue adalah mahasiswa yang ingin terus belajar,
-            mengembangkan kemampuan, menambah pengalaman,
-            dan mempersiapkan diri untuk menghadapi dunia kerja
-            maupun peluang di masa depan.
+            Selamat datang di portfolio gue.
+            Gue tertarik dengan teknologi, pengembangan web,
+            dan terus belajar hal baru.
           </p>
 
           <div class="hero-buttons">
-            <a href="#about" class="button button-primary">
-              Kenalan Lebih Jauh
+            <a href="#projects" class="btn btn-primary">
+              Lihat Proyek
             </a>
 
-            <a href="#projects" class="button button-secondary">
-              Lihat Portfolio
+            <a href="#contact" class="btn btn-secondary">
+              Hubungi Gue
             </a>
           </div>
-
         </div>
 
-        <div class="hero-image-wrapper">
-
-          <img src="assets/image/FARIDPRO.jpeg" alt="Foto Muhammad Farid Zaidaan" class="hero-image">
-
-          <div class="image-caption">
-            <strong>Muhammad Farid Zaidaan</strong>
-            <span>Student Portfolio</span>
-          </div>
-
+        <div class="profile-image">
+          <img src="assets/image/FARIDPRO.jpeg"
+               alt="Foto profil Farid Zaidaan">
         </div>
-
       </div>
-
     </section>
 
-    <!-- =========================
-         TENTANG SAYA
-    ========================== -->
-
-    <section class="section about" id="about">
-
-      <div class="container about-grid">
-
-        <div>
-          <span class="section-label">Tentang Saya</span>
-
-          <h2 class="section-title">
-            Mengenal saya lebih dekat.
-          </h2>
-        </div>
-
-        <div class="about-content">
-
-          <p>
-            Perkenalkan, nama saya Muhammad Farid Zaidaan.
-            Saat ini gue berstatus sebagai mahasiswa yang sedang
-            menjalani proses belajar dan mengembangkan diri.
-          </p>
-
-          <p>
-            Saya percaya bahwa proses pendidikan bukan hanya
-            tentang nilai akademik, tetapi juga tentang membangun
-            pola pikir, kedisiplinan, kemampuan berkomunikasi,
-            dan keberanian untuk mencoba hal baru.
-          </p>
-
-          <p>
-            Melalui portfolio ini, saya ingin memperkenalkan
-            diri, menampilkan kemampuan yang sedang saya pelajari,
-            serta mendokumentasikan proyek dan pengalaman
-            yang akan gue kumpulkan selama perjalanan pendidikan.
-          </p>
-
-          <div class="about-facts">
-
-            <div class="fact-card">
-              <span>Nama lengkap</span>
-              <strong>Muhammad Farid Zaidaan</strong>
-            </div>
-
-            <div class="fact-card">
-              <span>Status</span>
-              <strong>Mahasiswa</strong>
-            </div>
-
-            <div class="fact-card">
-              <span>Universitas</span>
-              <strong>STMIK ROSMA</strong>
-            </div>
-
-            <div class="fact-card">
-              <span>Program studi</span>
-              <strong>Sistem Informasi</strong>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- =========================
-         PENDIDIKAN
-    ========================== -->
-
-    <section class="section" id="education">
-
+    <!-- ABOUT -->
+    <section id="about" class="section">
       <div class="container">
-
-        <span class="section-label">Riwayat Pendidikan</span>
-
-        <h2 class="section-title">
-          Perjalanan pendidikan.
-        </h2>
-
-        <p class="section-description">
-          Pendidikan menjadi salah satu bagian penting dalam
-          proses gue membangun pengetahuan dan mempersiapkan
-          masa depan.
-        </p>
-
-        <div class="education-list">
-
-          <article class="education-card">
-
-            <div class="education-icon" aria-hidden="true">
-              🎓
-            </div>
-
-            <div>
-              <h3>Nama Universitas</h3>
-
-              <p>Program Studi: Nama Jurusan</p>
-
-              <p>
-                Fokus pada pembelajaran akademik,
-                pengembangan keterampilan, dan pengalaman
-                selama masa perkuliahan.
-              </p>
-
-              <span class="education-period">
-                2025 – SEKARANG
-              </span>
-            </div>
-
-          </article>
-
-          <article class="education-card">
-
-            <div class="education-icon" aria-hidden="true">
-              📚
-            </div>
-
-            <div>
-              <h3>SMK Rosma Karawang</h3>
-
-              <p>Sekolah Menengah Kejuruan</p>
-
-              <p>
-                Pengalaman pendidikan sebelumnya yang menjadi
-                bagian dari perjalanan belajar dan pengembangan
-                kemampuan diri.
-              </p>
-
-              <span class="education-period">
-                2022-2025
-              </span>
-            </div>
-
-          </article>
-
+        <div class="section-heading">
+          <p class="eyebrow">TENTANG GUE</p>
+          <h2>Mengenal Gue Lebih Dekat</h2>
         </div>
 
+        <div class="card about-card">
+          <p>
+            Gue adalah seseorang yang tertarik pada teknologi
+            dan pengembangan website. Gue ingin terus meningkatkan
+            kemampuan, menambah pengalaman, dan membangun proyek
+            yang bermanfaat.
+          </p>
+        </div>
       </div>
-
     </section>
 
-    <!-- =========================
-         SKILL DAN KEMAMPUAN
-    ========================== -->
-
-    <section class="section skills" id="skills">
-
+    <!-- EDUCATION -->
+    <section id="education" class="section section-alt">
       <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">PENDIDIKAN</p>
+          <h2>Perjalanan Pendidikan</h2>
+        </div>
 
-        <span class="section-label">Kemampuan</span>
+        <div class="card">
+          <h3>STMIK ROSMA</h3>
+          <p class="muted">Sistem Informasi</p>
+          <p>2026 – Sekarang</p>
+        </div>
+      </div>
+    </section>
 
-        <h2 class="section-title">
-          Hal yang sedang gue kembangkan.
-        </h2>
-
-        <p class="section-description">
-          Bagian ini bisa disesuaikan dengan kemampuan yang
-          benar-benar lu kuasai atau sedang lu pelajari.
-        </p>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">KEMAMPUAN</p>
+          <h2>Skill Gue</h2>
+        </div>
 
         <div class="skills-grid">
-
-          <article class="skill-card">
-
-            <h3>💻 Teknologi</h3>
-
-            <p>
-              Pengetahuan dan keterampilan di bidang teknologi
-              dan komputer.
-            </p>
-
-            <div class="skill-tags">
-              <span class="skill-tag">HTML</span>
-              <span class="skill-tag">Office</span>
-              <span class="skill-tag">Komputer</span>
-            </div>
-
-          </article>
-
-          <article class="skill-card">
-
-            <h3>🧠 Pengembangan Diri</h3>
-
-            <p>
-              Kemampuan yang mendukung proses belajar,
-              pekerjaan kelompok, dan pengembangan karier.
-            </p>
-
-            <div class="skill-tags">
-              <span class="skill-tag">Problem Solving</span>
-              <span class="skill-tag">Disiplin</span>
-              <span class="skill-tag">Belajar Mandiri</span>
-            </div>
-
-          </article>
-
-          <article class="skill-card">
-
-            <h3>🤝 Kemampuan Kerja</h3>
-
-            <p>
-              Keterampilan dasar untuk berkolaborasi
-              dan menyelesaikan tanggung jawab.
-            </p>
-
-            <div class="skill-tags">
-              <span class="skill-tag">Komunikasi</span>
-              <span class="skill-tag">Kerja Tim</span>
-              <span class="skill-tag">Manajemen Waktu</span>
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- =========================
-         PROYEK / PORTFOLIO
-    ========================== -->
-
-    <section class="section" id="projects">
-
-      <div class="container">
-
-        <span class="section-label">Proyek Saya</span>
-
-        <h2 class="section-title">
-          Karya dan pengalaman.
-        </h2>
-
-        <p class="section-description">
-          Tempat untuk menampilkan tugas kuliah, proyek pribadi,
-          hasil belajar, atau pengalaman organisasi.
-        </p>
-
-        <div class="project-grid">
-
-          <article class="project-card">
-
-            <div class="project-cover" aria-hidden="true">
-              01
-            </div>
-
-            <div class="project-content">
-
-              <h3>Website Portfolio Pribadi</h3>
-
-              <p>
-                Website untuk memperkenalkan profil diri,
-                pendidikan, kemampuan, dan proyek dalam
-                satu halaman yang responsif.
-              </p>
-
-              <div class="skill-tags">
-                <span class="skill-tag">HTML</span>
-                <span class="skill-tag">CSS</span>
-                <span class="skill-tag">Responsive Design</span>
-              </div>
-
-              <a href="#contact" class="project-link">
-                Tanya tentang proyek ↗
-              </a>
-
-            </div>
-
-          </article>
-
-          <article class="project-card">
-
-            <div class="project-cover" aria-hidden="true">
-              02
-            </div>
-
-            <div class="project-content">
-
-              <h3>Proyek Akademik</h3>
-
-              <p>
-                Tambahkan deskripsi tugas kuliah, proyek
-                kelompok, penelitian, atau karya lain
-                yang pernah lu kerjakan.
-              </p>
-
-              <div class="skill-tags">
-                <span class="skill-tag">Pembelajaran</span>
-                <span class="skill-tag">Proyek</span>
-              </div>
-
-              <a href="#contact" class="project-link">
-                Hubungi saya ↗
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- =========================
-         KONTAK
-    ========================== -->
-
-    <section class="section contact" id="contact">
-
-      <div class="container contact-grid">
-
-        <div>
-
-          <span class="section-label">Kontak</span>
-
-          <h2 class="section-title">
-            Mari terhubung dan bertukar ide.
-          </h2>
-
-          <p class="section-description">
-            Terbuka untuk koneksi, diskusi, kolaborasi,
-            kesempatan belajar, dan peluang yang relevan
-            dengan pengembangan diri.
-          </p>
-
-          <div class="contact-info">
-
-            <div class="contact-item">
-              <span>Email</span>
-
-              <a href="mailto:faridzaidan3@gmail.com">
-                faridzaidan3@gmail.com
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <span>Instagram</span>
-
-              <a href="https://instagram.com/faridzaidan3?obrf=MWdnMm02ZGsxbG04NQ%3D%3D">
-                @faridzaidan3
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <span>LinkedIn</span>
-
-              <a href="https://www.linkedin.com/in/muhammad-farid-zaidaan-5a41b4293?utm_source=share_via&utm_content=profile&utm_medium=member_android">
-                Muhammad Farid Zaidaan
-              </a>
-            </div>
-
+          <div class="card skill-card">
+            <h3>HTML</h3>
+            <p>Menyusun struktur halaman website.</p>
           </div>
 
+          <div class="card skill-card">
+            <h3>CSS</h3>
+            <p>Mengatur tampilan dan desain website.</p>
+          </div>
+
+          <div class="card skill-card">
+            <h3>JavaScript</h3>
+            <p>Membuat website lebih interaktif.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">HASIL KARYA</p>
+          <h2>Proyek Gue</h2>
         </div>
 
-        <div class="contact-note">
+        <div class="projects-grid">
+          <article class="card project-card">
+            <span class="project-number">01</span>
+            <h3>Personal Portfolio</h3>
+            <p>
+              Website pribadi untuk menampilkan profil,
+              pendidikan, kemampuan, dan proyek.
+            </p>
+            <span class="tag">HTML · CSS</span>
+          </article>
 
-          <h3>Terus belajar. Terus berkembang.</h3>
+          <article class="card project-card">
+            <span class="project-number">02</span>
+            <h3>Proyek Website</h3>
+            <p>
+              Tambahkan deskripsi proyek yang pernah
+              lu kerjakan di bagian ini.
+            </p>
+            <span class="tag">Web Development</span>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">KONTAK</p>
+          <h2>Terhubung dengan Gue</h2>
+          <p class="muted">
+            Silakan hubungi gue melalui informasi berikut.
+          </p>
+        </div>
+
+        <div class="card contact-card">
           <p>
-            Setiap pengalaman adalah kesempatan untuk
-            menambah pengetahuan, memperbaiki kemampuan,
-            dan mempersiapkan langkah berikutnya.
+            Email:
+            <a href="mailto:faridzaidan3@gmail.com">
+              faridzaidan3@gmail.com
+            </a>
           </p>
 
-          <a href="mailto:faridzaidan3@gmail.com?subject=Halo%20Farid" class="button">
-            Kirim Email ↗
-          </a>
-
+          <p>
+            Instagram:
+            <a href="https://instagram.com/faridzaidan3?obrf=MWdnMm02ZGsxbG04NQ%3D%3D"
+               target="_blank"
+               rel="noopener noreferrer">
+              Instagram
+            </a>
+          </p>
         </div>
-
       </div>
-
     </section>
 
   </main>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
+  <!-- FOOTER -->
   <footer class="footer">
-
     <div class="container footer-content">
-
-      <p>
-        © <span id="current-year"></span>
-        Muhammad Farid Zaidaan.
-        Dibuat untuk portfolio pribadi.
-      </p>
-
-      <div class="footer-links">
-        <a href="#home">Kembali ke atas ↑</a>
-        <a href="#about">Tentang</a>
-        <a href="#contact">Kontak</a>
-      </div>
-
+      <p>© 2026 Farid Zaidaan. All rights reserved.</p>
+      <a href="#home">Kembali ke atas ↑</a>
     </div>
-
   </footer>
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
-  <script>
-    // Menampilkan tahun secara otomatis di footer.
-    document.getElementById("current-year").textContent =
-      new Date().getFullYear();
-  </script>
-
 </body>
-
 </html>
